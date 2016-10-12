@@ -6,8 +6,7 @@ angular.module('app', [
     'ui.router',
     'uiRouterStyles',
     'moviesModule',
-    'movieModule',
-    'ui.multiselect'
+    'movieModule'
 ]).config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {
     $stateProvider.state('movies', {
         url: '/movies',
