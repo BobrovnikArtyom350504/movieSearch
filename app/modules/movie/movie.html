@@ -1,0 +1,55 @@
+<a ui-sref="movies" class="home">
+    <img src="modules/movies/images/home.svg" alt="home">
+</a>
+<div back-img={{movie.backgroundUrl}} class="background">
+    <div class="background-mask">
+        <div class="movie-container">
+            <div class="poster" back-img={{movie.posterUrl}}></div>
+            <div class="info-wrapper">
+                <aricle class="movie-article">
+                    <h1 class="movie-title">{{movie.title}}</h1>
+                    <span class="release-year">{{(movie.release_year)}}</span><br>
+                    <div class="rating">
+                        <img src="modules/movies/images/star.svg" alt="star">
+                        <span class="rating">{{movie.vote_average}}</span>
+                    </div>
+                    <div class="runtime">
+                        <img src="modules/movies/images/clock.svg" alt="star">
+                        <span class="rating">{{movie.runtime}} min</span>
+                    </div>
+                    <span class="budget">Budget: {{movie.budget}}</span>
+                    <span class="revenue">Revenue: {{movie.revenue}}</span>
+                    <div class="genres-wrapper">
+                        <div class="genre round" ng-repeat="genre in movie.genres">{{genre.name}}</div>
+                    </div>
+                    <span class="movie-overview">{{movie.overview}}</span>
+                </aricle>
+                <div class="actors-wrapper">
+                    <div class="actor" ng-repeat="actor in movie.actors">
+                        <div class="actor-avatar" back-img={{actor.logoUrl}}></div>
+                        <span class="name">{{actor.name}}</span>
+                        <span class="character">{{actor.character}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="images-wrapper">
+                <div ng-repeat="imageUrl in movie.imageUrls" back-img={{imageUrl}} class="image"></div>
+            </div>
+            <div class="trailer-wrapper" ng-if="movie.videoUrl">
+                <span class="trailer-title round">Trailer</span>
+                <iframe  ng-src={{movie.videoUrl}}></iframe>
+            </div>
+            <div class="center-fix">
+                <span class="similar-movie-title round" ng-if="movie.similarMovies.length">Similar movies</span>
+            </div>
+            <div class="similar-movies">
+                <div class="similar-movie" ng-repeat="similarMovie in movie.similarMovies">
+                    <a ui-sref="movie({id:similarMovie.id})">
+                        <div class="poster" back-img={{similarMovie.posterUrl}}></div>
+                    </a>
+                    <span class="movie-name">{{similarMovie.title}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

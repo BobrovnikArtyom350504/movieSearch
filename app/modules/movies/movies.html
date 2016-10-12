@@ -1,0 +1,32 @@
+<ng-include src="'/modules/search/search.html'"></ng-include>
+<div class="movies-wrapper">
+    <div class="movie-wrapper" ng-repeat="movie in movies">
+        <a ui-sref="movie({id:movie.id})">
+            <div class="movie-logo" back-img={{movie.posterUrl}}></div>
+            <section class="movie">
+                <div class="flex-fix">
+                    <header class="movie-header">
+                        <span class="title">{{movie.title}}</span>
+                        <div class="genres-wrapper">
+                            <span ng-repeat="genre in movie.genres">
+                                {{genre.name}}
+                                <span ng-if="!$last">,</span>
+                            </span>
+                        </div>
+                    </header>
+                    <div class="overview">{{movie.overview}}</div>
+                    <footer class="movie-footer">
+                        <div class="date-wrapper">
+                            <img src="modules/movies/images/calendar.svg" alt="calendar">
+                            <span>{{movie.release_date}}</span>
+                        </div>
+                        <div class="rating-wrapper">
+                            <img src="modules/movies/images/star.svg" alt="star">
+                            <span>{{movie.vote_average}}</span>
+                        </div>
+                    </footer>
+                </div>
+            </section>
+        </a>
+    </div>
+</div>

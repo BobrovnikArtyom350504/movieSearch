@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>MovieSearch</title>
+  <link rel="stylesheet" href="modules/movies/styles/movies.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-bootstrap-multiselect/angular-bootstrap-multiselect.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
+  <script src="modules/tmdbApi/tmdbApiModule.js"></script>
+  <script src="modules/tmdbApi/tmdbServices.js"></script>
+  <script src="modules/movies/moviesModule.js"></script>
+  <script src="modules/movies/moviesController.js"></script>
+  <script src="modules/movie/movieModule.js"></script>
+  <script src="modules/movie/movieController.js"></script>
+  <script src="modules/search/searchModule.js"></script>
+  <script src="modules/search/searchServices.js"></script>
+  <script src="modules/search/searchControllers.js"></script>
+  <script src="app.js"></script>
+</head>
+<body  ui-router-styles>
+  <ui-view></ui-view>
+</body>
+</html>

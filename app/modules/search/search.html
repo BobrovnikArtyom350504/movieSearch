@@ -1,0 +1,14 @@
+<div ng-controller='SearchController' class="search-wrapper">
+    <span>Genre: </span>
+    <select class="select-genres" ng-model="search.selectedGenre"
+            ng-options="genre.id as genre.name for genre in search.genres"
+            ng-change="modelChange()">
+        <option value="">Select genre</option>
+    </select>
+    <span>Sort by :</span>
+    <select ng-model="search.selectedSortType" ng-options="value as key for (key, value) in search.sortTypes"
+            ng-change="modelChange()">
+        <option value="">Select type</option>
+    </select>
+</div>
+
